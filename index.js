@@ -1,10 +1,11 @@
 const express = require('express');
-//const bodyParser = require('body-parser');
+
 const { randomBytes } = require('crypto');
 const cors = require('cors');
 
 const app = express();
-//app.use(bodyParser.json());
+const port = 8080;
+
 app.use(express.json());
 app.use(cors());
 
@@ -49,6 +50,6 @@ app.delete('/api/v1/:userid/tasks/:taskid/', (req, res) => {
     const taskid = req.params.taskid;
 });
 
-app.listen(4000, () => {
-    console.log('Listening on 4000');
+app.listen(port, () => {
+    console.log('Listening on ' + port);
 });
