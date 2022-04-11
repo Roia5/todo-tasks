@@ -4,7 +4,7 @@ const { randomBytes } = require('crypto');
 const cors = require('cors');
 
 const app = express();
-const port = 8080;
+const port = 4000;
 
 app.use(express.json());
 app.use(cors());
