@@ -25,6 +25,7 @@ app.post('/api/v1/:userid/tasks/', (req, res) => {
 
 app.get('/api/v1/:userid/tasks/', (req, res) => {
     const userId = req.params.userid;
+    res.set('Access-Control-Allow-Origin','*');
     res.send(tasksByUserId[userId] || []);
 });
 
@@ -35,6 +36,7 @@ app.get('/api/v1/:userid/tasks/:taskid/', async (req, res) => {
     const task = tasks.find((task) => {
         return task.id === taskid;
       });
+    res.set('Access-Control-Allow-Origin','*');
     res.send(task);
 });
 app.put('/api/v1/:userid/tasks/:taskid/', (req, res) => {
